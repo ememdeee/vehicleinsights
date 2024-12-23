@@ -18,7 +18,7 @@ export function Hero() {
               </p>
             </div>
             <div className="space-y-4">
-              <SiteForm />
+              <SiteForm formStyle='vehicleinsights' />
             </div>
           </div>
           <div className="flex items-center justify-center lg:justify-end">

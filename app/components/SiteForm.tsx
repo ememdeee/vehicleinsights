@@ -11,6 +11,7 @@ import VinLocationPopup from './VinLocationPopup';
 interface SiteFormProps {
     reportType?: 'VHR' | 'WS'; // Define the allowed reportType values
     reportStyle?: 'modern' | 'basic'; // Allowed style values
+    formStyle?: 'vehicleinsights' | 'motorcyclecheck' | 'canadawebsite'; // Allowed style values
     reportTab?: boolean; // Optional boolean for tab visibility
     defaultTab?: 'vin' | 'plate'; // Allowed default tab values
 }
@@ -18,6 +19,7 @@ interface SiteFormProps {
 const SiteForm: React.FC<SiteFormProps> = ({ 
   reportType = 'VHR',
   reportStyle = 'modern',   // First option for reportStyle
+  formStyle = 'vehicleinsights',   // First option for formStyle
   reportTab = true,         // Default to true
   defaultTab = 'vin',       // First option for defaultTab
 }) => {
@@ -283,7 +285,7 @@ const SiteForm: React.FC<SiteFormProps> = ({
                   >
                     <option value="">Select State</option>
                     {states.map((state, index) => (
-                        <option key={index} value={state.code}>
+                        <option key={index} value={state.code} className='text-black'>
                         {state.name}
                         </option>
                     ))}
@@ -318,7 +320,15 @@ const SiteForm: React.FC<SiteFormProps> = ({
             </div>
 
             {/* Search Button */}
-            <Button className="w-full" onClick={handleSubmit} disabled={isLoading}>
+            <Button 
+              className={`w-full ${
+                formStyle === 'motorcyclecheck' 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  : formStyle === 'canadawebsite'
+                    ? 'bg-red-600 hover:bg-red-700 text-white'
+                    : ''
+              }`} 
+              onClick={handleSubmit} disabled={isLoading}>
               {isLoading ? 'Please wait...' : 'Search'}
             </Button>
 
