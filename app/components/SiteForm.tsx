@@ -240,7 +240,7 @@ const SiteForm: React.FC<SiteFormProps> = ({
     };
 
   return (
-    <Card id='siteForm' className={`bg-transparent ${reportStyle === 'basic' ? 'border-none shadow-none' : ''}`}>
+    <Card id='siteForm' className={`${formStyle === 'canadawebsite' ? 'bg-white/90' : 'bg-transparent'}  ${reportStyle === 'basic' ? 'border-none shadow-none' : ''}`}>
       <CardContent className={reportStyle === 'modern' ? 'p-6' : 'p-0'}>
         {/* Tabs Section */}
         <Tabs defaultValue={defaultTab} className="w-full" onValueChange={(val) => { setActiveTab(val); setErrors({}); }}>
