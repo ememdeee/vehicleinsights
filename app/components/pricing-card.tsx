@@ -25,7 +25,7 @@ const pricingOptions = [
   },
   {
     title: "Unlimited Reports",
-    price: "$49.99/month",
+    price: "$39.99/month",
     description: "Annual Subscription",
     buttonText: "Start Subscription",
     code: "DVHYRS"

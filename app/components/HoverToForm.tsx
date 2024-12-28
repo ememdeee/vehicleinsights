@@ -4,9 +4,10 @@ import React, { useRef, useEffect, useState } from 'react'
 
 interface HoverToFormProps {
   children: React.ReactNode
+  className?: string // Add this line to include the className prop
 }
 
-export const HoverToForm: React.FC<HoverToFormProps> = ({ children }) => {
+export const HoverToForm: React.FC<HoverToFormProps> = ({ children, className }) => {
   const buttonRef = useRef<HTMLDivElement>(null)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -39,7 +40,11 @@ export const HoverToForm: React.FC<HoverToFormProps> = ({ children }) => {
   }
 
   return (
-    <div ref={buttonRef} onClick={handleClick} className='w-fit'>
+    <div 
+      ref={buttonRef} 
+      onClick={handleClick} 
+      className={`w-fit ${className || ''}`} // Merge the default class with the provided className
+    >
       {children}
     </div>
   )
