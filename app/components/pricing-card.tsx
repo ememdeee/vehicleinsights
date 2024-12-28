@@ -11,14 +11,14 @@ type CardStyle = 'vehicleinsights' | 'motorcyclecheck' | 'canadawebsite'
 const pricingOptions = [
   {
     title: "1 Report",
-    price: "$19.99",
+    price: "$29.99",
     description: "Complete Report for 1 Vehicle",
     buttonText: "Get Your Report",
     code: "DVH1"
   },
   {
     title: "2 Reports",
-    price: "$29.99",
+    price: "$39.99",
     description: "Complete Report for 2 Vehicles",
     buttonText: "Get Your Reports",
     code: "DVH2"
